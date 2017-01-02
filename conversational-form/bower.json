@@ -1,9 +1,0 @@
-{
-  "name": "conversational-form",
-  "version": "1.0.0",
-  "devDependencies": {},
-  "dependencies": {
-    "promise-polyfill": "^6.0.2",
-    "custom-event-polyfill": "^0.3.0"
-  }
-}
