@@ -1,0 +1,55 @@
+@import "nib"
+@import "rupture"
+@import "../../cf-variables"
+
+cf-input-control-elements
+	width auto
+	height auto
+	overflow hidden
+	display block
+	position relative
+	padding-top 10px // because else the animations of the buttons will cut...
+	z-index 0
+	user-select none
+
+	// &.animate-in
+
+	.cf-button
+		margin-bottom 10px
+		display inline-block
+
+		&.hide
+			display none
+
+	&.one-row
+		// remember to set values in ControlElements.ts
+		cf-list
+			height 62px
+
+		cf-list-button
+			opacity 0
+			pointer-events none
+
+	&.two-row
+		cf-list
+			white-space normal
+			height 112px
+	
+	// &.hide-nav-buttons
+
+cf-list, cf-list-button
+	will-change height
+	transition height $anim-time * 0.5 $anim-easeOut
+	
+cf-input[tag-type="file"]
+	cf-list
+		cursor default
+
+cf-list
+	display block
+	height 0px
+	cursor move
+	white-space nowrap
+
+	&.disabled
+		pointer-events none

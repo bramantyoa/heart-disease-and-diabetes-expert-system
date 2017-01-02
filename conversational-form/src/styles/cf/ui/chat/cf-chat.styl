@@ -1,0 +1,54 @@
+@import "nib"
+@import "rupture"
+@import "../../cf-variables"
+
+cf-chat
+	display block
+	width 100%
+	height s("calc(100% - %s)", $input-field-height)
+	overflow-x hidden
+
+	// flow children to bottom
+	display flex
+	flex-flow column nowrap
+	justify-content flex-end
+	align-items baseline
+
+	will-change padding-bottom
+	transition padding-bottom $anim-time * 0.5 $anim-easeOut
+
+	&:before
+		content ""
+		width: 100%
+		height 148px
+		pointer-events none
+		background linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%)
+		position absolute
+		top 0px
+		left 0px
+		z-index 2
+
+	// TODO: Style scrollbars... if we need it
+	// &::-webkit-scrollbar
+	// 	background red
+	// 	width 12px
+	// &::-webkit-scrollbar-button
+	// 	background yellow
+	// 	width 12px
+	// &::-webkit-scrollbar-track
+	// 	background brown
+	// 	width 12px
+	// &::-webkit-scrollbar-track-piece
+	// 	background pink
+	// 	width 12px
+	// &::-webkit-scrollbar-thumb
+	// 	background orange
+	// 	width 12px
+	// &::-webkit-scrollbar-corner
+	// 	background blue
+	// 	width 12px
+	// &::-webkit-resizer
+	// 	background green
+	// 	width 12px
+
+
